@@ -8,7 +8,7 @@ const fResult = await fetch('/default_data/DefaultCharacterSetups.json')
   .then((data) => {
     DefSetups = data.CharacteristicsDatas
   })
-console.log(DefSetups)
+// console.log(DefSetups)
 
 let CharacteristicsName = DefSetups[Index].name
 let CharacteristicsLevel = DefSetups[Index].level
@@ -111,12 +111,14 @@ let ModifyLevel = (CharacteristicsLevel) => {
 let SkillsNames = DefSetups[Index].skills
 const checkActive = ref(false)
 
-function checkActiveFunc(checkActive) {
-  console.log('12412')
+function checkActiveFunc() {
+  console.log(checkActive)
   if (checkActive.value == false) {
-    checkActive.value = ref(true)
+    console.log('1')
+    checkActive.value = true
   } else if (checkActive.value == true) {
-    checkActive.value = ref(false)
+    console.log('2')
+    checkActive.value = false
   }
 }
 </script>
@@ -135,11 +137,12 @@ function checkActiveFunc(checkActive) {
         <p>СПАСБРОСОК</p>
       </div>
     </div>
+    <!-- {{ checkActive }} -->
     <div class="skillArea" v-for="(item, Index) in SkillsNames">
       <div class="cont">
         <div
           class="check"
-          :class="{ checked: checkActive.value }"
+          :class="{ checked: checkActive }"
           @click="checkActiveFunc(checkActive)"
         ></div>
         <div class="modify">{{ ModifyLevel(CharacteristicsLevel) }}</div>
