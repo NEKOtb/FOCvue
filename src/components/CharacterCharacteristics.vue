@@ -146,7 +146,7 @@ function checkActiveFunc() {
           @click="checkActiveFunc(checkActive)"
         ></div>
         <div class="modify">{{ ModifyLevel(CharacteristicsLevel) }}</div>
-        <p>{{ SkillsNames[Index] }}</p>
+        <p>{{ SkillsNames[Index].name }}</p>
       </div>
     </div>
   </div>
