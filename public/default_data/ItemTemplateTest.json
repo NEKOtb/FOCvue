@@ -1,0 +1,12 @@
+{
+  "ItemType": [
+    "Weapon",
+    "Armor",
+    "Ammunition",
+    "Money",
+    "Language",
+    "Ownership",
+    "Item",
+    "CountedItem"
+  ]
+}
